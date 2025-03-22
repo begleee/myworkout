@@ -1,0 +1,32 @@
+import React from 'react'
+import { useFonts } from 'expo-font'
+import { Text } from 'react-native'
+
+import { TextStyle } from 'react-native';
+
+export default function GlobalText({style, children, fontFamily, ...props}: {style?: TextStyle, children: React.ReactNode, fontFamily: string}) {
+    const [fontsLoaded] = useFonts({
+        'Inter-black': require('../../../assets/fonts/Inter_18pt-Black.ttf'),
+        'Inter-black-italic': require('../../../assets/fonts/Inter_18pt-BlackItalic.ttf'),
+        'Inter-bold': require('../../../assets/fonts/Inter_18pt-Bold.ttf'),
+        'Inter-bold-italic': require('../../../assets/fonts/Inter_18pt-BoldItalic.ttf'),
+        'Inter-extra-bold': require('../../../assets/fonts/Inter_18pt-ExtraBold.ttf'),
+        'Inter-extra-bold-italic': require('../../../assets/fonts/Inter_18pt-ExtraBoldItalic.ttf'),
+        'Inter-extra-light': require('../../../assets/fonts/Inter_18pt-ExtraLight.ttf'),
+        'Inter-extra-light-italic': require('../../../assets/fonts/Inter_18pt-ExtraLightItalic.ttf'),
+        'Inter-italic': require('../../../assets/fonts/Inter_18pt-Italic.ttf'),
+        'Inter-light': require('../../../assets/fonts/Inter_18pt-Light.ttf'),
+        'Inter-light-italic': require('../../../assets/fonts/Inter_18pt-LightItalic.ttf'),
+        'Inter-medium': require('../../../assets/fonts/Inter_18pt-Medium.ttf'),
+        'Inter-meduim-italic': require('../../../assets/fonts/Inter_18pt-MediumItalic.ttf'),
+        'Inter-semibold': require('../../../assets/fonts/Inter_18pt-SemiBold.ttf'),
+        'Inter-semibold-italic': require('../../../assets/fonts/Inter_18pt-SemiBoldItalic.ttf'),
+        'Inter-thin': require('../../../assets/fonts/Inter_18pt-Thin.ttf'),
+        'Inter-thin-italic': require('../../../assets/fonts/Inter_18pt-ThinItalic.ttf')
+    })
+  return (
+    <Text style={[{fontFamily: `${fontFamily}`}, style]} {...props}>
+        {children}
+    </Text>
+  )
+}

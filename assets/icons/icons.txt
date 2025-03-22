@@ -1,0 +1,51 @@
+import React from 'react'
+import { Tabs } from 'expo-router'
+import { StyleSheet, View } from 'react-native'
+import Svg, { Path} from 'react-native-svg'
+
+export default function RootLayout() {
+    return (
+        <Tabs screenOptions={{ tabBarShowLabel: false, tabBarItemStyle: { alignSelf: 'center'} }}>  
+            <Tabs.Screen name='calendar' options={{
+                headerShown: false, tabBarIcon: () =>
+                <View style={{padding: 10}}>
+                    <Svg width={24} height={24} fill={"none"} strokeWidth={"1.5px"} stroke={"#5C00FF"} strokeMiterlimit={10} strokeLinecap='round' strokeLinejoin='round' viewBox='0 0 23.5 21.45'>
+                        <Path d='M21.68,5.46l-3.37,13.53c-.24,1.01-1.14,1.71-2.18,1.71H2.99c-1.51,0-2.59-1.48-2.14-2.93L5.06,4.25c.29-.94,1.16-1.59,2.14-1.59h12.3c.95,0,1.74,.58,2.07,1.38,.19,.43,.23,.92,.11,1.42Z'/>
+                        <Path d='M15.75,20.7h4.78c1.29,0,2.3-1.09,2.21-2.38l-.99-13.62'/>
+                        <Path d='M9.43,5.08L10.47,.76'/>
+                        <Path d='M16.13,5.09l.94-4.34'/>
+                        <Path d='M7.45,10.7H15.45'/>
+                        <Path d='M6.45,14.7H14.45'/>
+                    </Svg>
+                </View>
+            }}/>
+
+            <Tabs.Screen name='workout' options={{headerShown: false, title: "Workout", tabBarIcon: () => (
+                <Svg width={24} height={24} fill={"none"} strokeWidth={"1.5px"} stroke={"#5C00FF"} strokeLinecap='round' strokeLinejoin='round' viewBox='0 0 22.5 13.5'>
+                    <Path d='M16.43,12.75c2.4,0,3-1.35,3-3V3.75c0-1.65-.6-3-3-3s-3,1.35-3,3v6c0,1.65,.6,3,3,3Z'/>
+                    <Path d='M6.07,12.75c-2.4,0-3-1.35-3-3V3.75c0-1.65,.6-3,3-3s3,1.35,3,3v6c0,1.65-.6,3-3,3Z'/>
+                    <Path d='M9.07,6.75h4.36'/>
+                    <Path d='M21.75,9.25V4.25'/>
+                    <Path d='M.75,9.25V4.25'/>
+                </Svg>
+            )}}/>
+            
+            <Tabs.Screen name='stats' options={{headerShown: false, tabBarIcon: () => (
+                <Svg width={24} height={24} fill={"none"} strokeWidth={"1.5px"} stroke={"#5C00FF"} strokeLinecap='round' strokeLinejoin='round'>
+                    <Path d='M.75,20.75H18.75'/>
+                    <Path d='M3.35,7.13H1.75c-.55,0-1,.45-1,1v8.62c0,.55,.45,1,1,1h1.6c.55,0,1-.45,1-1V8.13c0-.55-.45-1-1-1Z'/>
+                    <Path d='M10.55,3.94h-1.6c-.55,0-1,.45-1,1v11.81c0,.55,.45,1,1,1h1.6c.55,0,1-.45,1-1V4.94c0-.55-.45-1-1-1Z'/>
+                    <Path d='M17.75,.75h-1.6c-.55,0-1,.45-1,1v15c0,.55,.45,1,1,1h1.6c.55,0,1-.45,1-1V1.75c0-.55-.45-1-1-1Z'/>
+                </Svg>
+            )}}/>
+
+
+            <Tabs.Screen name='index' options={{headerShown: false, tabBarIcon: () => (
+                <Svg width={24} height={24} fill={"none"} strokeWidth={'1.5px'} stroke={"#5C00FF"} strokeLinecap='round' strokeLinejoin='round' viewBox='0 0 18.68 21.5'>
+                    <Path d="M9.34,10.75c2.76,0,5-2.24,5-5S12.1,.75,9.34,.75,4.34,2.99,4.34,5.75s2.24,5,5,5Z"/>
+                    <Path d="M17.93,20.75c0-3.87-3.85-7-8.59-7S.75,16.88,.75,20.75"/>
+                </Svg>
+            )}}/>
+        </Tabs>
+    )
+}
